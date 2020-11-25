@@ -1,39 +1,54 @@
-import React from 'react'
-import {Link} from 'react-router-dom'
-import { Input, Avatar} from 'antd'
-
+import React, {useState} from 'react'
+import {SearchOutlined} from '@ant-design/icons'
 import './index.less'
 
-const { Search } = Input
-
-export default function Header()
-{
-  const titleArr = ['首页', '课程', '职业规划'];
+export default function Header() {
+  const [tags] = useState(
+    [
+      {
+        title: '首页',
+        route: '/'
+      },
+      {
+        title: '课程',
+        route: '/course'
+      },
+      {
+        title: '职业规划',
+        route: '/work'
+      }
+    ]
+  )
 
   return (
     <header className="header-container">
-      <Link className="logo" to="/">
-        <div className="logo-title">学成在线</div>
-        <span className="subtitle">在线有我 学有所成</span>
-      </Link>
-      <div className="title">
-          <div className="title-cate">
-            {titleArr.map((val, key) => (
-              <Link to="/" key={key}>{val}</Link>
-            ))}
-          </div>
-          <div className="search">
-            <Search
-              placeholder="输入关键词"
-              onSearch={val => console.log(val)}
-              enterButton
-            />
-            <Link to="/">个人中心</Link>
-          </div>
+      <div className="header-container-left">
       </div>
-      <div className="user">
-        <Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />
-        <span className="user-name">haiyang</span>
+      <div className="header-container-wrap">
+        <div className="tabs">
+          {
+            tags.map((val, key) => {
+              return (
+                <a key={key} href={val.route}>
+                  <span className={key == 0 ? "line" : ""}>{val.title}</span>
+                </a>
+              )
+            })
+          }
+        </div>
+        <div className="search">
+          <div className="search-input">
+            <input type="text" />
+            <span><SearchOutlined /></span>
+          </div>
+          <a href="/">
+            个人中心
+          </a>
+        </div>
+      </div>
+      <div className="header-container-right">
+        <div><img src="https://dss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=3531671336,3780835954&fm=26&gp=0.jpg" /></div>
+        <span>qq-feishui</span>
       </div>
     </header>
   )
