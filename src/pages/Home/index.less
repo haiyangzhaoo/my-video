@@ -1,0 +1,15 @@
+.home-container {
+  .home-container-body {
+    // padding-top: 75px;
+    padding-top: 10px;
+    display: flex;
+    div {
+      &:first-child, &:last-child {
+        flex-basis: 15%;
+      }
+      &:nth-child(2) {
+        flex-basis: 70%;
+      }
+    }
+  }
+}
