@@ -1,14 +1,21 @@
 .banner-container {
   display: flex;
   background-color: #3f0baf;
-  height: 260px;
+  height: 300px;
   color: white;
   justify-content: center;
-  div {
+  div.banner-container-slider {
     flex-basis: 70%;
-    .ant-carousel {
-      width: 100%;
+    position: relative;
+    .banner-container-slider-slide {
+      max-width: 975.8px;
       height: 100%;
+    }
+    .banner-container-slider-course {
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      z-index: 2;
     }
   }
 }

@@ -1,4 +1,6 @@
 import React, {useState} from 'react'
+import {Carousel} from 'antd'
+import Course from './Course'
 
 import './index.less'
 
@@ -17,15 +19,30 @@ export default function Banner()
     '//img.mukewang.com/5f9a70870001f4f918720764.jpg',
   ])
 
+  const contentStyle = {
+    height: '300px',
+    color: '#fff',
+    lineHeight: '300px',
+    textAlign: 'center',
+    background: '#364d79',
+  }
+
   return (
     <div className="banner-container">
-      <div>
-      <div className="container-xxxx">
-       <ul>
-         <li>信息内容一</li>
-         <li>信息内容二</li>
-       </ul>
-      </div>
+      <div className="banner-container-slider">
+        <div className="banner-container-slider-slide">
+          <Carousel autoplay>
+            {imgs.map((val, key) => (
+              <div key={key}>
+                <div style={{backgroundImage: `url(${val})`, backgroundSize: 'cover', backgroundRepeat: 'no-repeat', width: '100%', height: "300px"}}>
+                </div>
+              </div>
+            ))}
+          </Carousel>
+        </div>
+        <div className="banner-container-slider-course">
+          <Course data={langues} />
+        </div>
       </div>
     </div>
   )
