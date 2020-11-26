@@ -1,0 +1,35 @@
+// #0f87f1
+.like-container {
+  display: flex;
+  height: 60px;
+  align-items: center;
+  font-size: 16px;
+  background: rgba(0,0,0,.02);
+  border-radius: 3px;
+  .like-container-jishu {
+    flex-basis: 80% !important;
+    display: flex;
+    justify-content: space-around;
+    a {
+      color: #000;
+      span {
+        padding-right: 10px;
+        border-right: 2px solid #ccc;
+      }
+      &:first-child {
+        color: #0f87f1;
+      }
+      &:last-child {
+        span {
+          border: none;
+        }
+      }
+    }
+  }
+  .like-container-mod {
+    flex-basis: 20% !important;
+    text-align: right;
+    padding-right: 10px;
+    font-size: 12px;
+  }
+}

@@ -3,12 +3,80 @@
     // padding-top: 75px;
     padding-top: 10px;
     display: flex;
-    div {
+    & > div {
       &:first-child, &:last-child {
         flex-basis: 15%;
       }
       &:nth-child(2) {
         flex-basis: 70%;
+      }
+      .home-like {
+        margin-bottom: 10px;
+      }
+      .home-cards {
+        background-color: rgba(0,0,0,.02);
+        margin-bottom: 10px;
+        .home-cards-header {
+          height: 40px;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding: 0 5px;
+          a {
+            color: rgba(0,0,0,.75);
+            font-size: 12px;
+          }
+        }
+        .home-cards-courses {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: space-between;
+        }
+      }
+      .home-data {
+        .home-data-header {
+          height: 40px;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding: 0 5px;
+          a {
+            color: rgba(0,0,0,.75);
+            font-size: 12px;
+          }
+          & > div {
+            flex-basis: 60%;
+            display: flex;
+            justify-content: space-around;
+            span {
+              flex:1;
+              text-align: center;
+              color: rgba(0,0,0,.9);
+            }
+          }
+        }
+        .home-data-body {
+          display: flex;
+          .home-data-body-left {
+            flex-basis: 20%;
+          }
+          .home-data-body-right {
+            flex-basis: 80%;
+            .home-data-body-right-top {
+              width: 100%;
+              height: 60px;
+              background-image: url('http://www.imooc.com/static/img/index/index_webfullstack.png?t=2.0');
+              // background-repeat: no-repeat;
+              background-size: contain;
+              margin-bottom: 5px;
+            }
+            .home-data-body-right-bottom {
+              display: flex;
+              flex-wrap: wrap;
+              justify-content: space-between;
+            }
+          }
+        }
       }
     }
   }
