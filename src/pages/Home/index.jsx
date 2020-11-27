@@ -4,6 +4,8 @@ import Banner from '@/components/Banner'
 import Like from '@/components/Like'
 import MyCard from '@/components/MyCard'
 import StudyRoad from '@/components/StudyRoad'
+import Footer from '@/components/Footer'
+import Left from '@/components/Left'
 
 import './index.less'
 
@@ -28,9 +30,9 @@ function Home()
       <div className="home-container">
         <Banner />
         <div className="home-container-body">
-          <div>Left</div>
+          <div><Left className="home-left" /></div>
           <div>
-            <div className="home-like">
+            <div>
               <Like />
             </div>
             <div className="home-cards">
@@ -79,9 +81,10 @@ function Home()
               </div>
             </div>
           </div>
-          <div>Right</div>
+          <div></div>
         </div>
       </div>
+      <Footer />
     </React.Fragment>
   )
 }

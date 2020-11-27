@@ -2,8 +2,17 @@
   .home-container-body {
     // padding-top: 75px;
     padding-top: 10px;
+    padding-bottom: 10px;
     display: flex;
     & > div {
+      &:first-child {
+        position: relative;
+         &:first-child {
+           position: relative;
+           top: 100px;
+           right: -5%;
+        }
+      }
       &:first-child, &:last-child {
         flex-basis: 15%;
       }
@@ -79,5 +88,6 @@
         }
       }
     }
+
   }
 }
