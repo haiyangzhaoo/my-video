@@ -48,7 +48,7 @@ function Course()
           </div>
         </div>
         <div className="courses-container-body">
-          <div>Left</div>
+          <div></div>
           <div>
             <div className="courses-container-body-left">
               <div className="courses-container-body-left-head">
@@ -71,10 +71,45 @@ function Course()
               <Pagination defaultCurrent={6} total={500} />
             </div>
             <div className="courses-container-body-right">
-              right
+              <div className="courses-top">
+                <h2>精品TOP榜</h2>
+                <div className="courses-top-desc">
+                  Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except eject will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own
+                </div>
+                <div className="courses-top-cou">
+                  <h3>前端技术爱好者项目实战-React</h3>
+                  <span><i>高级</i> · 1125人在学习</span>
+                </div>
+                <div className="courses-top-cou">
+                  <h3>前端技术爱好者项目实战-React</h3>
+                  <span><i>高级</i> · 1125人在学习</span>
+                </div>
+                <div className="courses-top-cou">
+                  <h3>前端技术爱好者项目实战-React</h3>
+                  <span><i>高级</i> · 1125人在学习</span>
+                </div>
+              </div>
+              <div className="courses-top">
+                <h2>精品TOP榜</h2>
+                <div className="courses-top-desc">
+                  Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except eject will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own
+                </div>
+                <div className="courses-top-cou">
+                  <h3>前端技术爱好者项目实战-React</h3>
+                  <span><i>高级</i> · 1125人在学习</span>
+                </div>
+                <div className="courses-top-cou">
+                  <h3>前端技术爱好者项目实战-React</h3>
+                  <span><i>高级</i> · 1125人在学习</span>
+                </div>
+                <div className="courses-top-cou">
+                  <h3>前端技术爱好者项目实战-React</h3>
+                  <span><i>高级</i> · 1125人在学习</span>
+                </div>
+              </div>
             </div>
           </div>
-          <div>Right</div>
+          <div></div>
         </div>
       </div>
       <Footer />
