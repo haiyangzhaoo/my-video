@@ -1,8 +1,8 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import {SearchOutlined} from '@ant-design/icons'
 import './index.less'
 
-export default function Header() {
+export default function Header(props) {
   const [tags] = useState(
     [
       {
@@ -19,6 +19,18 @@ export default function Header() {
       }
     ]
   )
+  const [routeStr, setRouteStr] = useState('/')
+
+  useEffect(() => {
+    let hashStr = window.location.hash
+    let leftPos = hashStr.indexOf('#')
+    let rightPos = hashStr.indexOf('?')
+    if (rightPos != -1) {
+      setRouteStr(hashStr.substring(leftPos+1, rightPos))
+    } else {
+      setRouteStr(hashStr.substring(leftPos+1))
+    }
+  })
 
   return (
     <header className="header-container">
@@ -30,7 +42,7 @@ export default function Header() {
             tags.map((val, key) => {
               return (
                 <a key={key} href={val.route}>
-                  <span className={key == 0 ? "line" : ""}>{val.title}</span>
+                  <span className={routeStr == val.route ? "line" : ""}>{val.title}</span>
                 </a>
               )
             })
