@@ -20,6 +20,7 @@ export default function Header(props) {
     ]
   )
   const [routeStr, setRouteStr] = useState('/')
+  const [inputVal, setInputVal] = useState('')
 
   useEffect(() => {
     let hashStr = window.location.hash
@@ -30,7 +31,16 @@ export default function Header(props) {
     } else {
       setRouteStr(hashStr.substring(leftPos+1))
     }
+
+    window.onkeyup = (e) => {
+      if (e.keyCode == 13) handleSearch()
+    }
   })
+
+  const handleSearch = () => {
+    // 写请求数据的逻辑
+    console.log(inputVal)
+  }
 
   return (
     <header className="header-container">
@@ -50,8 +60,8 @@ export default function Header(props) {
         </div>
         <div className="search">
           <div className="search-input">
-            <input type="text" />
-            <span><SearchOutlined /></span>
+            <input type="text" value={inputVal} onChange={e => setInputVal(e.target.value)} />
+            <span onClick={handleSearch}><SearchOutlined /></span>
           </div>
           <a href="/">
             个人中心
