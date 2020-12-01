@@ -1,6 +1,6 @@
 .cates-container {
   display: flex;
-  height: 42px;
+  min-height: 42px;
   align-items: center;
   margin: 5px 0;
   border-bottom: 1px solid #e6dcdc;
@@ -32,5 +32,36 @@
     margin-left: auto;
     padding: 3px 5px;
     color: #0f84fd;
+  }
+  .ant-collapse {
+    border: none;
+    width: 100%;
+    .ant-collapse-item {
+      border: none;
+      width: 100%;
+      .ant-collapse-header {
+        padding: 0;
+        width: 100%;
+        background-color: #fff;
+        border: none;
+      }
+      .ant-collapse-content {
+        .ant-collapse-content-box {
+          .cates-lists {
+            span {
+              &:first-child {
+                background-color: #fff;
+                color: #000;
+                &:hover {
+                  background-color: #0f84fd;
+                  color: #fff;
+                  border-radius: 3px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
   }
 }
