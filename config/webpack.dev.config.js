@@ -4,6 +4,7 @@ const {merge}   = require('webpack-merge')
 const webpackConfigBase = require('./webpack.base.config')
 const htmlWebpackPlugin = require('html-webpack-plugin')
 const OpenBrowserPlugin = require('open-browser-webpack-plugin')
+const {CleanWebpackPlugin} = require('clean-webpack-plugin')
 const PORT = 8000
 
 function resolve(pathname)
@@ -12,7 +13,7 @@ function resolve(pathname)
 }
 
 const devConfig = {
-  mode: 'development',
+  mode: 'production',
   plugins: [
     // 定义环境变量为开发环境
     new webpack.DefinePlugin({
@@ -30,7 +31,8 @@ const devConfig = {
     }),
     new OpenBrowserPlugin({
       url: `http://30.77.42.23:${PORT}`,
-    })
+    }),
+    new CleanWebpackPlugin()
   ],
   devServer: {
     // host: '30.77.42.23',

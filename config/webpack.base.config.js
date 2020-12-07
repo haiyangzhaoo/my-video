@@ -11,7 +11,7 @@ const baseConfig = {
     index: resolve('../src/index.js')
   },
   output: {
-    path: resolve('../dist/zhy'),
+    path: resolve('../dist'),
     filename: 'bundle.[hash:6].js'
   },
   resolve: {
