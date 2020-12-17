@@ -48,6 +48,12 @@ const devConfig = {
         changeOrigin: true
       }
     }
+  },
+  optimization: {
+    runtimeChunk: 'single',
+    splitChunks: {
+      chunks: 'all'
+    }
   }
 }
 
